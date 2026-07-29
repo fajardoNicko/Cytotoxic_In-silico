@@ -1,0 +1,380 @@
+{
+ "moringin": {
+  "pubchem_cid": 153557,
+  "formula": "C14H17NO5S",
+  "mw": "311.36",
+  "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=CC=C(C=C2)CN=C=S)O)O)O",
+  "inchikey": "QAZIHHJTZPNRCM-CNJBRALLSA-N",
+  "iupac": "(2S,3R,4R,5R,6S)-2-[4-(isothiocyanatomethyl)phenoxy]-6-methyloxane-3,4,5-triol"
+ },
+ "glucomoringin": {
+  "pubchem_cid": 162639104,
+  "formula": "C20H28KNO14S2",
+  "mw": "609.7",
+  "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=CC=C(C=C2)C/C(=N\\OS(=O)(=O)[O-])/S[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)O)O)O.[K+]",
+  "inchikey": "OVFNULRBAJGUQL-FNPJROJFSA-M",
+  "iupac": "potassium [(E)-[1-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]sulfanyl-2-[4-[(2S,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxyphenyl]ethylidene]amino] sulfate"
+ },
+ "benzyl isothiocyanate": {
+  "pubchem_cid": 2346,
+  "formula": "C8H7NS",
+  "mw": "149.21",
+  "smiles": "C1=CC=C(C=C1)CN=C=S",
+  "inchikey": "MDKCFLQDBWCQCV-UHFFFAOYSA-N",
+  "iupac": "isothiocyanatomethylbenzene"
+ },
+ "4-hydroxybenzyl isothiocyanate": {
+  "pubchem_cid": 160611,
+  "formula": "C8H7NOS",
+  "mw": "165.21",
+  "smiles": "C1=CC(=CC=C1CN=C=S)O",
+  "inchikey": "ATKWJXUJUNLTFU-UHFFFAOYSA-N",
+  "iupac": "4-(isothiocyanatomethyl)phenol"
+ },
+ "sinigrin": {
+  "pubchem_cid": 6911854,
+  "formula": "C10H17NO9S2",
+  "mw": "359.4",
+  "smiles": "C=CC/C(=N\\OS(=O)(=O)O)/S[C@H]1[C@@H]([C@H]([C@@H]([C@H](O1)CO)O)O)O",
+  "inchikey": "PHZOWSSBXJXFOR-PTGZALFTSA-N",
+  "iupac": "[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl] (1E)-N-sulfooxybut-3-enimidothioate"
+ },
+ "niazimicin": {
+  "pubchem_cid": 5471459,
+  "formula": "C16H23NO6S",
+  "mw": "357.4",
+  "smiles": "CCOC(=S)NCC1=CC=C(C=C1)OC2C(C(C(C(O2)C)O)O)O",
+  "inchikey": "JOSHUAQJVMGTGS-UHFFFAOYSA-N",
+  "iupac": "O-ethyl N-[[4-(3,4,5-trihydroxy-6-methyloxan-2-yl)oxyphenyl]methyl]carbamothioate"
+ },
+ "niazirin": {
+  "pubchem_cid": 129556,
+  "formula": "C14H17NO5",
+  "mw": "279.29",
+  "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=CC=C(C=C2)CC#N)O)O)O",
+  "inchikey": "OBJREHLZEIEGDU-CNJBRALLSA-N",
+  "iupac": "2-[4-[(2S,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxyphenyl]acetonitrile"
+ },
+ "moringine": {
+  "pubchem_cid": 7504,
+  "formula": "C7H9N",
+  "mw": "107.15",
+  "smiles": "C1=CC=C(C=C1)CN",
+  "inchikey": "WGQKYBSKWIADBV-UHFFFAOYSA-N",
+  "iupac": "phenylmethanamine"
+ },
+ "moringinine": null,
+ "spirochin": null,
+ "quercetin": {
+  "pubchem_cid": 5280343,
+  "formula": "C15H10O7",
+  "mw": "302.23",
+  "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+  "inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+  "iupac": "2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxychromen-4-one"
+ },
+ "kaempferol": {
+  "pubchem_cid": 5280863,
+  "formula": "C15H10O6",
+  "mw": "286.24",
+  "smiles": "C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O",
+  "inchikey": "IYRMWMYZSQPJKC-UHFFFAOYSA-N",
+  "iupac": "3,5,7-trihydroxy-2-(4-hydroxyphenyl)chromen-4-one"
+ },
+ "rutin": {
+  "pubchem_cid": 5280805,
+  "formula": "C27H30O16",
+  "mw": "610.5",
+  "smiles": "C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)OC3=C(OC4=CC(=CC(=C4C3=O)O)O)C5=CC(=C(C=C5)O)O)O)O)O)O)O)O",
+  "inchikey": "IKGXIBQEEMLURG-NVPNHPEKSA-N",
+  "iupac": "2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-3-[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-[[(2R,3R,4R,5R,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxymethyl]oxan-2-yl]oxychromen-4-one"
+ },
+ "isoquercitrin": {
+  "pubchem_cid": 5484006,
+  "formula": "C21H20O12",
+  "mw": "464.4",
+  "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@H](O4)[C@@H](CO)O)O)O)O)O",
+  "inchikey": "OPJZLUXFQFQYAI-GNPVFZCLSA-N",
+  "iupac": "3-[(2S,3R,4R,5R)-5-[(1R)-1,2-dihydroxyethyl]-3,4-dihydroxyoxolan-2-yl]oxy-2-(3,4-dihydroxyphenyl)-5,7-dihydroxychromen-4-one"
+ },
+ "apigenin": {
+  "pubchem_cid": 5280443,
+  "formula": "C15H10O5",
+  "mw": "270.24",
+  "smiles": "C1=CC(=CC=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O",
+  "inchikey": "KZNIFHPLKGYRTM-UHFFFAOYSA-N",
+  "iupac": "5,7-dihydroxy-2-(4-hydroxyphenyl)chromen-4-one"
+ },
+ "luteolin": {
+  "pubchem_cid": 5280445,
+  "formula": "C15H10O6",
+  "mw": "286.24",
+  "smiles": "C1=CC(=C(C=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O)O",
+  "inchikey": "IQPNAANSBPBGFQ-UHFFFAOYSA-N",
+  "iupac": "2-(3,4-dihydroxyphenyl)-5,7-dihydroxychromen-4-one"
+ },
+ "catechin": {
+  "pubchem_cid": 9064,
+  "formula": "C15H14O6",
+  "mw": "290.27",
+  "smiles": "C1[C@@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C=C3)O)O)O",
+  "inchikey": "PFTAWBLQPZVEMU-DZGCQCFKSA-N",
+  "iupac": "(2R,3S)-2-(3,4-dihydroxyphenyl)-3,4-dihydro-2H-chromene-3,5,7-triol"
+ },
+ "epicatechin": {
+  "pubchem_cid": 72276,
+  "formula": "C15H14O6",
+  "mw": "290.27",
+  "smiles": "C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C=C3)O)O)O",
+  "inchikey": "PFTAWBLQPZVEMU-UKRRQHHQSA-N",
+  "iupac": "(2R,3R)-2-(3,4-dihydroxyphenyl)-3,4-dihydro-2H-chromene-3,5,7-triol"
+ },
+ "gallic acid": {
+  "pubchem_cid": 370,
+  "formula": "C7H6O5",
+  "mw": "170.12",
+  "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+  "inchikey": "LNTHITQWFMADLM-UHFFFAOYSA-N",
+  "iupac": "3,4,5-trihydroxybenzoic acid"
+ },
+ "ellagic acid": {
+  "pubchem_cid": 5281855,
+  "formula": "C14H6O8",
+  "mw": "302.19",
+  "smiles": "C1=C2C3=C(C(=C1O)O)OC(=O)C4=CC(=C(C(=C43)OC2=O)O)O",
+  "inchikey": "AFSDNFLWKVMVRB-UHFFFAOYSA-N",
+  "iupac": "6,7,13,14-tetrahydroxy-2,9-dioxatetracyclo[6.6.2.04,16.011,15]hexadeca-1(15),4,6,8(16),11,13-hexaene-3,10-dione"
+ },
+ "chlorogenic acid": {
+  "pubchem_cid": 1794427,
+  "formula": "C16H18O9",
+  "mw": "354.31",
+  "smiles": "C1[C@H]([C@H]([C@@H](C[C@@]1(C(=O)O)O)OC(=O)/C=C/C2=CC(=C(C=C2)O)O)O)O",
+  "inchikey": "CWVRJTMFETXNAD-JUHZACGLSA-N",
+  "iupac": "(1S,3R,4R,5R)-3-[(E)-3-(3,4-dihydroxyphenyl)prop-2-enoyl]oxy-1,4,5-trihydroxycyclohexane-1-carboxylic acid"
+ },
+ "caffeic acid": {
+  "pubchem_cid": 689043,
+  "formula": "C9H8O4",
+  "mw": "180.16",
+  "smiles": "C1=CC(=C(C=C1/C=C/C(=O)O)O)O",
+  "inchikey": "QAIPRVGONGVQAS-DUXPYHPUSA-N",
+  "iupac": "(E)-3-(3,4-dihydroxyphenyl)prop-2-enoic acid"
+ },
+ "ferulic acid": {
+  "pubchem_cid": 445858,
+  "formula": "C10H10O4",
+  "mw": "194.18",
+  "smiles": "COC1=C(C=CC(=C1)/C=C/C(=O)O)O",
+  "inchikey": "KSEBMYQBYZTDHS-HWKANZROSA-N",
+  "iupac": "(E)-3-(4-hydroxy-3-methoxyphenyl)prop-2-enoic acid"
+ },
+ "p-coumaric acid": {
+  "pubchem_cid": 637542,
+  "formula": "C9H8O3",
+  "mw": "164.16",
+  "smiles": "C1=CC(=CC=C1/C=C/C(=O)O)O",
+  "inchikey": "NGSWKAQJJWESNS-ZZXKWVIFSA-N",
+  "iupac": "(E)-3-(4-hydroxyphenyl)prop-2-enoic acid"
+ },
+ "syringic acid": {
+  "pubchem_cid": 10742,
+  "formula": "C9H10O5",
+  "mw": "198.17",
+  "smiles": "COC1=CC(=CC(=C1O)OC)C(=O)O",
+  "inchikey": "JMSVCTWVEWCHDZ-UHFFFAOYSA-N",
+  "iupac": "4-hydroxy-3,5-dimethoxybenzoic acid"
+ },
+ "vanillin": {
+  "pubchem_cid": 1183,
+  "formula": "C8H8O3",
+  "mw": "152.15",
+  "smiles": "COC1=C(C=CC(=C1)C=O)O",
+  "inchikey": "MWOOGOJBHIARFG-UHFFFAOYSA-N",
+  "iupac": "4-hydroxy-3-methoxybenzaldehyde"
+ },
+ "protocatechuic acid": {
+  "pubchem_cid": 72,
+  "formula": "C7H6O4",
+  "mw": "154.12",
+  "smiles": "C1=CC(=C(C=C1C(=O)O)O)O",
+  "inchikey": "YQUVCSBJEUQKSH-UHFFFAOYSA-N",
+  "iupac": "3,4-dihydroxybenzoic acid"
+ },
+ "beta-sitosterol": {
+  "pubchem_cid": 222284,
+  "formula": "C29H50O",
+  "mw": "414.7",
+  "smiles": "CC[C@H](CC[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C)C(C)C",
+  "inchikey": "KZJWDPNRJALLNS-VJSFXXLFSA-N",
+  "iupac": "(3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5-ethyl-6-methylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol"
+ },
+ "stigmasterol": {
+  "pubchem_cid": 5280794,
+  "formula": "C29H48O",
+  "mw": "412.7",
+  "smiles": "CC[C@H](/C=C/[C@@H](C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C)C(C)C",
+  "inchikey": "HCXVJBMSMIARIN-PHZDYDNGSA-N",
+  "iupac": "(3S,8S,9S,10R,13R,14S,17R)-17-[(E,2R,5S)-5-ethyl-6-methylhept-3-en-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol"
+ },
+ "campesterol": {
+  "pubchem_cid": 173183,
+  "formula": "C28H48O",
+  "mw": "400.7",
+  "smiles": "C[C@H](CC[C@@H](C)C(C)C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C",
+  "inchikey": "SGNBVLSWZMBQTH-PODYLUTMSA-N",
+  "iupac": "(3S,8S,9S,10R,13R,14S,17R)-17-[(2R,5R)-5,6-dimethylheptan-2-yl]-10,13-dimethyl-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol"
+ },
+ "lupeol": {
+  "pubchem_cid": 259846,
+  "formula": "C30H50O",
+  "mw": "426.7",
+  "smiles": "CC(=C)[C@@H]1CC[C@]2([C@H]1[C@H]3CC[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O)C)C",
+  "inchikey": "MQYXUWHLBZFQQO-QGTGJCAVSA-N",
+  "iupac": "(1R,3aR,5aR,5bR,7aR,9S,11aR,11bR,13aR,13bR)-3a,5a,5b,8,8,11a-hexamethyl-1-prop-1-en-2-yl-1,2,3,4,5,6,7,7a,9,10,11,11b,12,13,13a,13b-hexadecahydrocyclopenta[a]chrysen-9-ol"
+ },
+ "oleanolic acid": {
+  "pubchem_cid": 10494,
+  "formula": "C30H48O3",
+  "mw": "456.7",
+  "smiles": "C[C@]12CC[C@@H](C([C@@H]1CC[C@@]3([C@@H]2CC=C4[C@]3(CC[C@@]5([C@H]4CC(CC5)(C)C)C(=O)O)C)C)(C)C)O",
+  "inchikey": "MIJYXULNPSFWEK-GTOFXWBISA-N",
+  "iupac": "(4aS,6aR,6aS,6bR,8aR,10S,12aR,14bS)-10-hydroxy-2,2,6a,6b,9,9,12a-heptamethyl-1,3,4,5,6,6a,7,8,8a,10,11,12,13,14b-tetradecahydropicene-4a-carboxylic acid"
+ },
+ "ursolic acid": {
+  "pubchem_cid": 64945,
+  "formula": "C30H48O3",
+  "mw": "456.7",
+  "smiles": "C[C@@H]1CC[C@@]2(CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(CC[C@@H](C5(C)C)O)C)C)[C@@H]2[C@H]1C)C)C(=O)O",
+  "inchikey": "WCGUUGGRBIKTOS-GPOJBZKASA-N",
+  "iupac": "(1S,2R,4aS,6aR,6aS,6bR,8aR,10S,12aR,14bS)-10-hydroxy-1,2,6a,6b,9,9,12a-heptamethyl-2,3,4,5,6,6a,7,8,8a,10,11,12,13,14b-tetradecahydro-1H-picene-4a-carboxylic acid"
+ },
+ "beta-amyrin": {
+  "pubchem_cid": 73145,
+  "formula": "C30H50O",
+  "mw": "426.7",
+  "smiles": "C[C@@]12CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(CC[C@@H](C5(C)C)O)C)C)[C@@H]1CC(CC2)(C)C)C",
+  "inchikey": "JFSHUTJDVKUMTJ-QHPUVITPSA-N",
+  "iupac": "(3S,4aR,6aR,6bS,8aR,12aR,14aR,14bR)-4,4,6a,6b,8a,11,11,14b-octamethyl-1,2,3,4a,5,6,7,8,9,10,12,12a,14,14a-tetradecahydropicen-3-ol"
+ },
+ "palmitic acid": {
+  "pubchem_cid": 985,
+  "formula": "C16H32O2",
+  "mw": "256.42",
+  "smiles": "CCCCCCCCCCCCCCCC(=O)O",
+  "inchikey": "IPCSVZSSVZVIGE-UHFFFAOYSA-N",
+  "iupac": "hexadecanoic acid"
+ },
+ "oleic acid": {
+  "pubchem_cid": 445639,
+  "formula": "C18H34O2",
+  "mw": "282.5",
+  "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)O",
+  "inchikey": "ZQPPMHVWECSIRJ-KTKRTIGZSA-N",
+  "iupac": "(Z)-octadec-9-enoic acid"
+ },
+ "linoleic acid": {
+  "pubchem_cid": 5280450,
+  "formula": "C18H32O2",
+  "mw": "280.4",
+  "smiles": "CCCCC/C=C\\C/C=C\\CCCCCCCC(=O)O",
+  "inchikey": "OYHQOLUKZRVURQ-HZJYTTRNSA-N",
+  "iupac": "(9Z,12Z)-octadeca-9,12-dienoic acid"
+ },
+ "stearic acid": {
+  "pubchem_cid": 5281,
+  "formula": "C18H36O2",
+  "mw": "284.5",
+  "smiles": "CCCCCCCCCCCCCCCCCC(=O)O",
+  "inchikey": "QIQXTHQIDYTFRH-UHFFFAOYSA-N",
+  "iupac": "octadecanoic acid"
+ },
+ "octacosanoic acid": {
+  "pubchem_cid": 10470,
+  "formula": "C28H56O2",
+  "mw": "424.7",
+  "smiles": "CCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O",
+  "inchikey": "UTOPWMOLSKOLTQ-UHFFFAOYSA-N",
+  "iupac": "octacosanoic acid"
+ },
+ "4-hydroxymellein": {
+  "pubchem_cid": 169539,
+  "formula": "C10H10O4",
+  "mw": "194.18",
+  "smiles": "CC1C(C2=C(C(=CC=C2)O)C(=O)O1)O",
+  "inchikey": "STSOHAOGZMLWFR-UHFFFAOYSA-N",
+  "iupac": "4,8-dihydroxy-3-methyl-3,4-dihydroisochromen-1-one"
+ },
+ "vanillic acid": {
+  "pubchem_cid": 8468,
+  "formula": "C8H8O4",
+  "mw": "168.15",
+  "smiles": "COC1=C(C=CC(=C1)C(=O)O)O",
+  "inchikey": "WKOLLVMJNQIZCI-UHFFFAOYSA-N",
+  "iupac": "4-hydroxy-3-methoxybenzoic acid"
+ },
+ "scopoletin": {
+  "pubchem_cid": 5280460,
+  "formula": "C10H8O4",
+  "mw": "192.17",
+  "smiles": "COC1=C(C=C2C(=C1)C=CC(=O)O2)O",
+  "inchikey": "RODXRVNMMDRFIK-UHFFFAOYSA-N",
+  "iupac": "7-hydroxy-6-methoxychromen-2-one"
+ },
+ "squalene": {
+  "pubchem_cid": 638072,
+  "formula": "C30H50",
+  "mw": "410.7",
+  "smiles": "CC(=CCC/C(=C/CC/C(=C/CC/C=C(/CC/C=C(/CCC=C(C)C)\\C)\\C)/C)/C)C",
+  "inchikey": "YYGNTYWPHWGJRM-AAJYLUCBSA-N",
+  "iupac": "(6E,10E,14E,18E)-2,6,10,15,19,23-hexamethyltetracosa-2,6,10,14,18,22-hexaene"
+ },
+ "phytol": {
+  "pubchem_cid": 5280435,
+  "formula": "C20H40O",
+  "mw": "296.5",
+  "smiles": "C[C@@H](CCC[C@@H](C)CCC/C(=C/CO)/C)CCCC(C)C",
+  "inchikey": "BOTWFXYSPFMFNR-PYDDKJGSSA-N",
+  "iupac": "(E,7R,11R)-3,7,11,15-tetramethylhexadec-2-en-1-ol"
+ },
+ "doxorubicin": {
+  "pubchem_cid": 31703,
+  "formula": "C27H29NO11",
+  "mw": "543.5",
+  "smiles": "C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC3=C2C(=C4C(=C3O)C(=O)C5=C(C4=O)C(=CC=C5)OC)O)(C(=O)CO)O)N)O",
+  "inchikey": "AOJJSUZBOXZQNB-TZSSRYMLSA-N",
+  "iupac": "(7S,9S)-7-[(2R,4S,5S,6S)-4-amino-5-hydroxy-6-methyloxan-2-yl]oxy-6,9,11-trihydroxy-9-(2-hydroxyacetyl)-4-methoxy-8,10-dihydro-7H-tetracene-5,12-dione"
+ },
+ "paclitaxel": {
+  "pubchem_cid": 36314,
+  "formula": "C47H51NO14",
+  "mw": "853.9",
+  "smiles": "CC1=C2[C@H](C(=O)[C@@]3([C@H](C[C@@H]4[C@]([C@H]3[C@@H]([C@@](C2(C)C)(C[C@@H]1OC(=O)[C@@H]([C@H](C5=CC=CC=C5)NC(=O)C6=CC=CC=C6)O)O)OC(=O)C7=CC=CC=C7)(CO4)OC(=O)C)O)C)OC(=O)C",
+  "inchikey": "RCINICONZNJXQF-MZXODVADSA-N",
+  "iupac": "[(1S,2S,3R,4S,7R,9S,10S,12R,15S)-4,12-diacetyloxy-15-[(2R,3S)-3-benzamido-2-hydroxy-3-phenylpropanoyl]oxy-1,9-dihydroxy-10,14,17,17-tetramethyl-11-oxo-6-oxatetracyclo[11.3.1.03,10.04,7]heptadec-13-en-2-yl] benzoate"
+ },
+ "cisplatin": {
+  "pubchem_cid": 5702198,
+  "formula": "Cl2H6N2Pt",
+  "mw": "300.05",
+  "smiles": "N.N.Cl[Pt]Cl",
+  "inchikey": "LXZZYRPGZAFOLE-UHFFFAOYSA-L",
+  "iupac": "azane;dichloroplatinum"
+ },
+ "erlotinib": {
+  "pubchem_cid": 176870,
+  "formula": "C22H23N3O4",
+  "mw": "393.4",
+  "smiles": "COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC",
+  "inchikey": "AAKJLRGGTJKAMG-UHFFFAOYSA-N",
+  "iupac": "N-(3-ethynylphenyl)-6,7-bis(2-methoxyethoxy)quinazolin-4-amine"
+ },
+ "etoposide": {
+  "pubchem_cid": 36462,
+  "formula": "C29H32O13",
+  "mw": "588.6",
+  "smiles": "C[C@@H]1OC[C@@H]2[C@@H](O1)[C@@H]([C@H]([C@@H](O2)O[C@H]3[C@H]4COC(=O)[C@@H]4[C@@H](C5=CC6=C(C=C35)OCO6)C7=CC(=C(C(=C7)OC)O)OC)O)O",
+  "inchikey": "VJJPUSNTGOMMGY-MRVIYFEKSA-N",
+  "iupac": "(5S,5aR,8aR,9R)-5-[[(2R,4aR,6R,7R,8R,8aS)-7,8-dihydroxy-2-methyl-4,4a,6,7,8,8a-hexahydropyrano[3,2-d][1,3]dioxin-6-yl]oxy]-9-(4-hydroxy-3,5-dimethoxyphenyl)-5a,6,8a,9-tetrahydro-5H-[2]benzofuro[6,5-f][1,3]benzodioxol-8-one"
+ }
+}

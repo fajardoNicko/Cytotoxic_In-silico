@@ -1,0 +1,4 @@
+compound_name,pubchem_cid,cas,formula,mw,rt_min,pct_area,match_score,method,notes
+EXAMPLE - delete this row,5280343,117-39-5,C15H10O7,302.23,14.82,6.41,94,GC-MS,NIST library match
+EXAMPLE - delete this row,637542,501-98-4,C9H8O3,164.16,11.20,3.07,91,GC-MS,
+EXAMPLE - delete this row,985,57-10-3,C16H32O2,256.42,18.55,21.30,97,GC-MS,often dominant in ethanolic extracts
