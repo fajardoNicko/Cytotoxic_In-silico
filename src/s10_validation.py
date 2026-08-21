@@ -389,6 +389,9 @@ def make_figures(obs_doses, obs_viab, pred_v, pred_vp, obs_v,
                 fmt="o-", color="#b2182b", lw=2, ms=8, capsize=4,
                 label="observed, MSU-IIT MTT assay")
     ax.set_xscale("log")
+    ax.set_xticks(list(obs_doses))
+    ax.set_xticklabels([f"{d:g}" for d in obs_doses])
+    ax.minorticks_off()
     ax.set_xlabel("concentration (µg/mL)")
     ax.set_ylabel("% cell viability")
     ax.set_title("Sealed prediction versus observed dose response, A549")
