@@ -1,0 +1,5 @@
+extract,solvent,cell,ic50_ug_ml,assay,source,url
+aqueous leaf,aqueous,A549,166.7,MTT,"Tiloke et al. 2013, BMC Complement Altern Med 13:226",https://link.springer.com/article/10.1186/1472-6882-13-226
+alkaloid extract (MOAE),alkaloid fraction,A549,158.67,MTT,"Xie et al. 2021, Evid Based Complement Alternat Med 5591687",https://onlinelibrary.wiley.com/doi/10.1155/2021/5591687
+ethanolic leaf,ethanol,A549,1062.87,MTS,"Trends in Sciences (2022), MOE vs A549",https://tis.wu.ac.th/index.php/tis/article/view/3202
+ethanolic leaf,ethanol,MCF-12A (normal),1424.04,MTS,"Trends in Sciences (2022), normal-cell comparator",https://tis.wu.ac.th/index.php/tis/article/view/3202

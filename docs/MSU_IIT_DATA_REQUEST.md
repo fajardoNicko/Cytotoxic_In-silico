@@ -6,6 +6,61 @@
 
 ---
 
+> ## ⚠ AMENDMENT (2026-08-20) — read this first
+>
+> MSU-IIT has confirmed that **relative peak area (`pct_area`) and PubChem CID
+> (`pubchem_cid`) are not included** in what accompanies the MTT assay — i.e.
+> no quantitative GC-MS/LC-MS composition table will be supplied.
+>
+> **Section 1 below is therefore withdrawn as a blocking requirement.** It is
+> retained for the record and in case the data becomes available later.
+>
+> **The study is not blocked.** The extract-level potency prediction and the
+> dose-range advisory were already rebuilt on a literature prior (see
+> `IN_SILICO_PLAN.md` §6 amendment) and never depended on composition data.
+> What is lost is *batch-specific* constituent identity: docking, ADMET and
+> network-pharmacology results must now be reported as pertaining to
+> *M. oleifera* constituents **reported in the literature**, not constituents
+> **verified present in this batch**. That is a reporting limitation, not a
+> failure.
+>
+> ### The three items that now matter most — please still request these
+>
+> **A. A qualitative compound list, if any characterisation was done at all.**
+> Just the compound names the instrument library assigned, plus the match
+> score. No percentages, no CIDs needed — we can look the identifiers up
+> ourselves. Even a screenshot or PDF of the peak list is usable. This lets us
+> filter the 47-compound literature library down to compounds plausibly
+> present in *this* material, which materially strengthens the mechanism
+> section.
+>
+> **B. Extract handling numbers (Section 2 below).** Yield (% w/w), the
+> reconstitution solvent, the stock concentration in mg/mL, and the final
+> solvent % v/v in the top-dose well. Without these, "200 ppm" is not fully
+> interpretable and the vehicle control cannot be specified correctly. These
+> are bookkeeping numbers the lab already has — they cost nothing to send.
+>
+> **C. RAW PER-WELL ABSORBANCE after the assay (Section 8 below).**
+> **This is now the single most important item in this document.** Not
+> averaged viability percentages — the actual OD readings per well, per plate,
+> per run. Without raw OD the sealed prediction cannot be scored, the blank
+> subtraction cannot be verified, and plate and edge effects cannot be
+> separated from the treatment effect. If only one request survives, make it
+> this one.
+>
+> ### Still time-critical
+>
+> The **dose-range advisory** (`results/prediction_registry/DOSE_RANGE_MEMO.md`)
+> is ready now and does not depend on any of the above. It must reach MSU-IIT
+> **before** they run the assay. Published *M. oleifera* IC₅₀ values against
+> A549 put the probability that the true IC₅₀ exceeds the planned 200 ppm
+> ceiling at **65–94%**; if that happens, viability never crosses 50%, the
+> IC₅₀ cannot be determined, and Specific Question 3 is unanswerable — while
+> the regression still reports a high R² that makes the failure invisible.
+> Recommended series: **50, 100, 200, 400, 800, 1600 ppm**.
+
+---
+
 ## 1. Chemical composition of the crude extract — **REQUIRED, blocking**
 
 A **GC-MS and/or LC-MS/MS peak table** of the rotary-evaporated crude extract. For every peak:

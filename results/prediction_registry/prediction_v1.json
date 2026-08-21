@@ -1,0 +1,148 @@
+{
+  "study": "In silico prediction: M. oleifera ethanolic bark extract vs A549",
+  "companion_plan": "IN_SILICO_PLAN.md",
+  "sealed_utc": "2026-08-20T01:06:49+00:00",
+  "git_commit": "791652014c24c3ba086f5ffd58e35bb6202178bb",
+  "python": "3.13.0",
+  "basis": {
+    "method": "literature prior on crude-extract IC50, solvent-matched",
+    "why_not_qsar": "The A549 QSAR failed Gate G2 on a scaffold split (test R^2 = 0.562 < 0.60) and showed ~11-fold 1-sigma error with an unresolved bias direction on natural products, so per-compound potencies were NOT summed into an extract IC50.",
+    "literature_anchors_ug_per_mL": {
+      "aqueous_leaf_A549": 166.7,
+      "alkaloid_extract_A549": 158.67,
+      "ethanolic_leaf_A549": 1062.87,
+      "ethanolic_leaf_MCF12A_normal": 1424.04
+    }
+  },
+  "PREDICTION_1_extract_ic50_ug_per_mL": {
+    "point_solvent_matched": 1062.9,
+    "interval_68pct_solvent_matched": [
+      359.5,
+      3142.6
+    ],
+    "interval_95pct_solvent_matched": [
+      127.0,
+      8897.7
+    ],
+    "point_pooled_optimistic": 304.1,
+    "interval_68pct_pooled": [
+      102.8,
+      899.1
+    ]
+  },
+  "PREDICTION_2_viability_at_planned_doses": {
+    "doses_ppm": [
+      12.5,
+      25.0,
+      50.0,
+      100.0,
+      200.0
+    ],
+    "solvent_matched_prior": {
+      "12.5": 99.6,
+      "25.0": 99.0,
+      "50.0": 97.7,
+      "100.0": 94.9,
+      "200.0": 89.1
+    },
+    "pooled_prior": {
+      "12.5": 98.0,
+      "25.0": 95.6,
+      "50.0": 90.5,
+      "100.0": 80.8,
+      "200.0": 65.3
+    },
+    "max_inhibition_at_200ppm_solvent_matched_pct": 10.9
+  },
+  "PREDICTION_3_dose_range_failure": {
+    "claim": "The planned 12.5-200 ppm series will NOT bracket 50% inhibition, so no valid IC50 can be determined from it.",
+    "p_ic50_exceeds_200ppm_solvent_matched": 0.938,
+    "p_ic50_exceeds_200ppm_pooled": 0.65,
+    "falsified_if": "observed mean viability at 200 ppm is below 50%, i.e. the series does bracket the IC50"
+  },
+  "PREDICTION_4_dose_rank_order": {
+    "claim": "monotonic decrease in mean viability across ascending dose",
+    "expected_spearman_rho": -1.0
+  },
+  "PREDICTION_5_statistics_under_planned_design": {
+    "claim_solvent_matched": "ANOVA may still be significant on the trend, but Tukey will NOT separate 12.5 or 25 ppm from the negative control, because predicted inhibition there is under 2%.",
+    "predicted_tukey_vs_control_significant": {
+      "12.5ppm": false,
+      "25ppm": false,
+      "50ppm": false,
+      "100ppm": false,
+      "200ppm": "borderline"
+    }
+  },
+  "PREDICTION_6_selectivity_index": {
+    "estimate": 1.34,
+    "basis": "MCF-12A / A549 from the ethanolic-leaf study",
+    "interpretation": "close to 1 -- little selectivity for cancer over normal cells; a therapeutically weak result"
+  },
+  "PREDICTION_7_recommended_design": {
+    "dose_series_ppm": [
+      50,
+      100,
+      200,
+      400,
+      800,
+      1600
+    ],
+    "drop": [
+      12.5,
+      25
+    ],
+    "reason": "both priors predict <5% inhibition; those wells buy no information",
+    "replicates": {
+      "available": true,
+      "source": "E2_power.csv",
+      "true_ic50_150": {
+        "n_tech": 4,
+        "n_bio": 3,
+        "wells_per_group": 12,
+        "perimeter_required": false,
+        "power_anova": 1.0
+      },
+      "true_ic50_300": {
+        "n_tech": 8,
+        "n_bio": 3,
+        "wells_per_group": 24,
+        "perimeter_required": true,
+        "power_anova": 1.0
+      }
+    },
+    "required_controls": [
+      "vehicle control at the top-dose solvent % (defect D1)",
+      "cell-free extract+MTT interference control at every dose (D6)",
+      "normal lung comparator for Selectivity Index (D8)"
+    ],
+    "layout_constraint": "with the full control set, n_tech <= 6 fits the 60 interior wells; n_tech = 8 forces use of evaporation-prone perimeter wells"
+  },
+  "PREDICTION_8_method_bias": {
+    "claim": "The manuscript's log-linear IC50 will disagree with a 4PL fit, and the disagreement grows without bound once the IC50 leaves the tested range.",
+    "monte_carlo_loglinear_bias_pct": {
+      "true_ic50_107": 0.4,
+      "true_ic50_161": 15.5,
+      "true_ic50_214": 46.5,
+      "true_ic50_322": 182.0,
+      "true_ic50_482": 889.1,
+      "true_ic50_750": 12159.8,
+      "true_ic50_1072": 382681.0
+    },
+    "warning": "a high regression R^2 does NOT indicate an adequate dose range: at a true IC50 of 1063 ug/mL the log-linear fit gives R^2 = 0.85 while mis-estimating IC50 by ~16,000x"
+  },
+  "VALIDATION_CRITERIA": {
+    "primary": "predicted IC50 within 3-fold of observed, OR the observed result confirms IC50 > top dose as predicted",
+    "viability_rmse_threshold_pct_points": 15,
+    "spearman_rho_threshold": 0.9,
+    "note": "If the extract turns out markedly more potent than the ethanolic-leaf prior -- plausible, since bark chemistry differs and no bark A549 data exists -- this prediction fails and that is a real finding about bark, not a modelling excuse."
+  },
+  "KNOWN_LIMITATIONS": [
+    "No quantitative A549 data for M. oleifera BARK exists; prior built from leaf extracts.",
+    "One anchor used MTS rather than MTT.",
+    "The single ethanolic anchor borrows its spread from the between-study variance of the other anchors.",
+    "QSAR unusable for per-compound potency; docking/ranking only.",
+    "ChEMBL pull was partial (connection dropped at 21,000 records).",
+    "Thioredoxin reductase 1 has no structure with a drug-like ligand; target dropped from the docking panel."
+  ]
+}

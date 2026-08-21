@@ -1,0 +1,82 @@
+==============================================================================
+CALIBRATION FROM THE SCAFFOLD-SPLIT TEST SET
+==============================================================================
+train 5574   test 1393
+
+All test compounds (n=1393):
+  R^2                        +0.557
+  bias  mean(meas - pred)    +0.202 log units
+  RMSE                       0.988 log units
+  |error| median             0.532 (3.4-fold)
+
+Moringa physicochemical envelope (5th-95th pct):
+  rdkit_mw          152.25 ..   464.00
+  logp               -1.63 ..     8.16
+  tpsa               20.23 ..   208.29
+  fraction_csp3       0.00 ..     0.94
+
+Test compounds INSIDE the Moringa envelope (n=754):
+  R^2                        +0.426
+  bias  mean(meas - pred)    +0.213 log units
+  RMSE                       1.041 log units
+  |error| median             0.540 (3.5-fold)
+
+CALIBRATION ADOPTED (basis: scaffold-test compounds inside the Moringa envelope (n=754))
+  pIC50_calibrated = pIC50_predicted + (+0.213)
+  1 sigma uncertainty = 1.041 log units (= x/11.0 to x11.0)
+  net effect on IC50 estimates: DOWNWARD (model was under-potent)
+
+Corroboration -- 5 measured Moringa constituents give bias -0.328
+  envelope estimate +0.213
+  !! SIGN CONFLICT: the two estimates disagree on the DIRECTION
+     of the bias. A correction derived from the envelope would
+     push potency the opposite way to what the only real
+     natural-product measurements indicate.
+  !! 1 sigma = 1.04 log units (~11-fold). The
+     uncertainty is an order of magnitude larger than the bias
+     correction, so correcting the bias changes nothing material.
+
+==============================================================================
+VERDICT: QSAR IS NOT USABLE FOR PER-COMPOUND POTENCY.
+==============================================================================
+  Do NOT sum these values into an extract-level IC50. With ~11-fold
+  1-sigma error per component and an unresolved bias direction, a bottom-up
+  mixture calculation would produce a confident-looking number with no
+  information in it.
+
+  Use instead:
+    * MEASURED values for the constituents that have them (below).
+    * A LITERATURE PRIOR on crude M. oleifera extract IC50 vs A549 for the
+      extract-level prediction and the dose-range recommendation.
+    * The QSAR for RANKING/TRIAGE only -- deciding which constituents are
+      worth docking -- never for absolute potency.
+==============================================================================
+
+==============================================================================
+CALIBRATED POTENCY -- Moringa constituents, most potent first
+==============================================================================
+                 name        chem_class           potency_source       raw  calibrated  1sig_strong  1sig_weak
+               phytol diterpene alcohol UNUSABLE (out of domain)      0.84        0.52         0.05       5.68
+           oleic acid        fatty acid    QSAR (bias-corrected)      0.98        0.60         0.05       6.62
+        linoleic acid        fatty acid    QSAR (bias-corrected)      1.08        0.66         0.06       7.26
+           niazimicin     thiocarbamate    QSAR (bias-corrected)      1.32        0.81         0.07       8.86
+             niazirin nitrile glycoside    QSAR (bias-corrected)      1.55        0.95         0.09      10.41
+             squalene           terpene    QSAR (bias-corrected)      1.78        1.09         0.10      11.94
+     4-hydroxymellein       isocoumarin    QSAR (bias-corrected)      1.80        1.10         0.10      12.08
+         stearic acid        fatty acid    QSAR (bias-corrected)      2.03        1.24         0.11      13.65
+             sinigrin     glucosinolate UNUSABLE (out of domain)      2.04        1.25         0.11      13.73
+             moringin    isothiocyanate    QSAR (bias-corrected)      2.48        1.52         0.14      16.68
+    octacosanoic acid        fatty acid    QSAR (bias-corrected)      2.53        1.55         0.14      17.03
+        palmitic acid        fatty acid    QSAR (bias-corrected)      2.65        1.62         0.15      17.83
+     chlorogenic acid     phenolic acid    QSAR (bias-corrected)      2.92        1.79         0.16      19.66
+         ellagic acid     phenolic acid    QSAR (bias-corrected)      3.33        2.04         0.19      22.42
+         caffeic acid     phenolic acid    QSAR (bias-corrected)      4.14        2.53         0.23      27.85
+        syringic acid     phenolic acid    QSAR (bias-corrected)      4.58        2.80         0.25      30.82
+            moringine          alkaloid    QSAR (bias-corrected)      4.71        2.88         0.26      31.72
+             catechin       flavan-3-ol    QSAR (bias-corrected)      4.89        2.99         0.27      32.88
+          epicatechin       flavan-3-ol    QSAR (bias-corrected)      4.89        2.99         0.27      32.88
+benzyl isothiocyanate    isothiocyanate        measured (ChEMBL)      4.61        3.06         1.53       6.10
+
+5 compounds use a measured value; 3 are unusable (out of domain).
+
+Wrote C:\Users\Nicko\Lung_Cancer_In_Silico\results\tables\calibrated_potency.csv

@@ -17,52 +17,64 @@ The full design rationale is in **[IN_SILICO_PLAN.md](IN_SILICO_PLAN.md)**. This
 | jamovi verification package | `src/s09_jamovi_export.py` | ✅ generated, **needs manual jamovi run** |
 | Dose–response maths (manuscript + 4PL) | `src/mtt_model.py` | ✅ |
 | Virtual 96-well plate simulator | `src/virtual_plate.py` | ✅ |
-| Monte Carlo (power, D1/D2/D6 bias) | `src/s08_monte_carlo.py` | ⚠️ E1 done; **stopped mid-E2** |
+| Monte Carlo (power, D1/D2/D6 bias) | `src/s08_monte_carlo.py` | ✅ E1 to E5 complete (2026-08-20) |
 | Ligand library (47 compounds, 3D) | `src/s01_ligand_prep.py` | ✅ |
 | Target panel verification (RCSB) | `src/s02_target_prep.py` | ✅ 15/16 accepted |
 | ChEMBL A549 curation (6,972 compounds) | `src/s05_chembl_fetch.py` | ✅ |
 | QSAR training + Gates G2/G4 | `src/s06_qsar_train.py` | ⚠️ **G4 pass, G2 FAIL (scaffold)** |
-| QSAR reality check | `src/s06b_qsar_reality_check.py` | ⏳ **written, not yet run** |
-| Mixture model (Phase C) | `src/s07_mixture_model.py` | ✅ code ready, needs composition |
+| QSAR reality check | `src/s06b_qsar_reality_check.py` | ✅ run — model is compressed toward the mean |
+| Mixture model (Phase C) | `src/s07_mixture_model.py` | ⏸️ retained, **no longer the primary route** |
+| Potency calibration / QSAR verdict | `src/s06c_calibrate_potency.py` | ✅ **QSAR ruled unusable for potency** |
+| Literature prior + dose-range advisory | `src/s07b_literature_prior.py` | ✅ memo issued |
+| Pre-registration + SHA-256 seal | `src/s10_preregister.py` | ✅ **sealed 2026-08-20** |
+| **Full methods write-up** | `docs/METHODS.md` / `.docx` | ✅ |
 
-**Blocked on MSU-IIT:** everything downstream of the GC-MS/LC-MS peak table. See **[docs/MSU_IIT_DATA_REQUEST.md](docs/MSU_IIT_DATA_REQUEST.md)** — send this now.
+**⚠ Composition data is not coming.** MSU-IIT confirmed that relative peak area
+and PubChem CID are **not** included with the MTT deliverable — there will be no
+quantitative GC-MS/LC-MS table. Phases B–D are **not** blocked: the potency
+prediction was already rebuilt on a literature prior, and Phase B proceeds on the
+literature-derived 47-compound library with every result labelled as
+literature-based rather than batch-verified. See the amendment in
+**[IN_SILICO_PLAN.md](IN_SILICO_PLAN.md)** §3 and
+**[docs/MSU_IIT_DATA_REQUEST.md](docs/MSU_IIT_DATA_REQUEST.md)**.
+
+**Still needed from MSU-IIT:** (a) a qualitative compound-name list if any
+characterisation exists, (b) extract yield / solvent / stock mg/mL, and
+(c) **raw per-well absorbance** after the assay — without (c) the sealed
+prediction cannot be scored at all.
 
 ---
 
 ## ▶ Resume here (next session)
 
-Work stopped 2026-07-29. Nothing is left running.
+1. **Do the manual jamovi check** — `docs/G3_JAMOVI_CHECK.md`, ~15 min. This is
+   the only outstanding piece of Gate G3, and the only task that cannot be
+   automated.
 
-1. **Run the QSAR reality check first — it gates everything downstream.**
-   ```bash
-   cd src && python -u s06b_qsar_reality_check.py
-   ```
-   Gate G2 **failed** on the scaffold split (XGBoost test R² = 0.562 vs the
-   pre-declared ≥ 0.60), while passing on the random split (0.712). Since the
-   *Moringa* constituents are novel scaffolds, the scaffold number is the one
-   that counts. The predictions also look compressed — every constituent lands
-   at pIC₅₀ 4.6–5.5, and oleic acid at 0.99 µg/mL is not a credible potency for
-   a fatty acid. This script tests whether the model is simply predicting the
-   training mean, and compares against the 5 constituents that have **real
-   measured** A549 values (held out of training): benzyl isothiocyanate 3.06,
-   ursolic acid 15.86, apigenin 27.29, stigmasterol 40.53, oleanolic acid
-   43.94 µg/mL. **Do not use the per-compound IC₅₀ values in Phase C until
-   this is resolved.**
+2. **Email the SHA-256 hash** from `results/prediction_registry/REGISTRY.md` to
+   the adviser. The prediction was sealed 2026-08-20 as
+   `7f73b66d7d33f191046f842738c3abb1395fffa482a9313f8d7be87aedfd76c2`. The
+   timestamp is what makes it falsifiable, so send it before any assay data
+   exists. Do not edit `prediction_v1.json` afterwards.
 
-2. **Finish the Monte Carlo** (E1 completed; stopped during E2):
-   ```bash
-   python -u s08_monte_carlo.py 1200
-   ```
-   ~1 h single-core. Use `python -u`; without it the output buffers and you
-   cannot watch progress. Don't run it alongside the QSAR — they contend for
-   every core.
+3. **Send the dose-range memo** — `results/prediction_registry/DOSE_RANGE_MEMO.md`.
+   Time-critical: it is only useful if it reaches MSU-IIT *before* they run the
+   assay. Recommended series **50/100/200/400/800/1600 ppm**; P(true IC₅₀ >
+   200 ppm) is 65–94% depending on prior.
 
-3. **Do the manual jamovi check** — `docs/G3_JAMOVI_CHECK.md`, ~15 min. This is
-   the only outstanding piece of Gate G3.
+4. **Write `s03_docking.py`** against the literature library — this is now the
+   main remaining build, and it is unblocked.
 
-4. **Send `docs/MSU_IIT_DATA_REQUEST.md`** to the partner institution. Phases
-   B–D are blocked on the GC-MS/LC-MS peak table, and the dose-range advisory
-   is only useful if it reaches them before they run the assay.
+Gate G2 **failed** on the scaffold split (XGBoost test R² = 0.562 vs the
+pre-declared ≥ 0.60) while passing on the random split (0.712). Since the
+*Moringa* constituents are novel scaffolds, the scaffold number governs.
+`s06c_calibrate_potency.py` resolved the consequence: per-compound error is
+~11-fold at 1σ inside the *Moringa* physicochemical envelope, and the bias
+direction is unresolved (envelope says +0.213 log, the five real measured
+constituents say −0.328 log — opposite signs). **The QSAR is therefore used for
+ranking/triage only, never for absolute potency**, and Phase C runs on the
+literature prior. Gate G4 passed: doxorubicin predicted at 0.634 µM against a
+published 0.1–10 µM window, held out of training.
 
 Still unwritten: `s03_docking.py`, `s04_admet.py`, `s10_validation.py`.
 
