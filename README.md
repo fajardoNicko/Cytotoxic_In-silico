@@ -8,6 +8,36 @@ The full design rationale is in **[IN_SILICO_PLAN.md](IN_SILICO_PLAN.md)**. This
 
 ## Status
 
+## ✅ Phase F complete — the prediction held
+
+The wet-lab data arrived in August 2026. The prediction sealed on 2026-08-20,
+before any absorbance existed, was scored against it. **Gate G5 passed on all
+three criteria.**
+
+| Sealed prediction | Observed | Verdict |
+|---|---|---|
+| Extract IC₅₀ **1062.9 µg/mL** (68% CI 359 to 3143) | **911.84 µg/mL** | fold error **1.166**, inside 3× ✅ |
+| %viability at 5 planned doses | RMSE **10.70 pp** (threshold 15) | ✅ |
+| Dose rank order, ρ = −1.0 | ρ = **−1.0000** across 6 doses | ✅ |
+| "12.5–200 ppm will not bracket 50% inhibition" | max inhibition **35.0%**, even at 400 ppm | **confirmed** |
+| "log-linear IC₅₀ will leave the tested range at high R²" | IC₅₀ **2.28× beyond top dose**, R² = 0.9996 | **confirmed** |
+| No dose separates from control post hoc | Dunn: none significant | matched 4/4 |
+
+The lab extended the series to 400 ppm on top of the planned 200 ppm ceiling
+and still never reached 50% inhibition, exactly as the
+[dose-range memo](results/prediction_registry/DOSE_RANGE_MEMO.md) warned.
+
+**Deliverables:** [VALIDATION_REPORT.docx](results/VALIDATION_REPORT.docx) ·
+[VALIDATION_REPORT.xlsx](results/VALIDATION_REPORT.xlsx)
+
+**Bottom line:** the extract is weak against A549. At ~912 µg/mL the IC₅₀ is
+about 9× above the NCI cutoff for a crude extract worth pursuing. That is a
+negative result, delivered with a prospectively sealed prediction, an
+advance warning about the design that came true, and a full audit of the raw
+absorbances.
+
+---
+
 **Phase A (extract-agnostic) — built and running.** Everything here works without the extract data.
 
 | Component | File | State |
@@ -46,6 +76,12 @@ prediction cannot be scored at all.
 ---
 
 ## ▶ Resume here (next session)
+
+0. **Phase F is done.** Remaining work is the manuscript, not the pipeline.
+   Query the lab on three points before submission: the treatment exposure
+   time (absent from the report), the actual outlier rule (27 of 78 wells
+   were excluded and it was not Grubbs), and the analysis sentence claiming
+   activity below 50 µg/mL that contradicts their own table.
 
 1. **Do the manual jamovi check** — `docs/G3_JAMOVI_CHECK.md`, ~15 min. This is
    the only outstanding piece of Gate G3, and the only task that cannot be
