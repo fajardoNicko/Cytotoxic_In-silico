@@ -3,7 +3,7 @@
 
 **Companion to:** "In Vitro Cytotoxic Activity of Malunggay's (*Moringa oleifera*) Ethanolic Bark Extract against A549 Lung Cancer Cells" (Dalistan, Roque, Soriano, Salvilla)
 **Purpose:** A computational study that (a) predicts the wet-lab outcome *before* it is run, (b) mirrors the exact assay, formulas and statistics of the research plan, and (c) is falsifiable against the real MTT data when it arrives.
-**Status:** Plan — no code written yet.
+**Status:** Phases A, C, D, E and F complete. Gate G5 **passed** on 2026-08-21: the sealed IC₅₀ prediction of 1062.9 µg/mL came in at fold error 1.166 against the measured 911.84 µg/mL. Phase B (docking, ADMET, network) remains unbuilt and runs on the literature library. See §9.
 
 ---
 
