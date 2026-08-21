@@ -1,0 +1,7 @@
+prediction,sealed,observed,criterion,result,verdict
+P1 extract IC50,1062.9 ug/mL (68% CI 360 to 3143),911.84 ug/mL,within 3-fold,fold error 1.166,PASS
+P2 viability at 5 doses,"99.6, 99.0, 97.7, 94.9, 89.1","120.3, 107.3, 103.2, 91.2, 83.6",RMSE at or below 15 pp,RMSE 10.70 pp,PASS
+P3 dose range fails,series will not bracket 50% inhibition,"83.6% viability at 200 ppm, 65.0% at 400 ppm",falsified if viability at 200 ppm below 50%,max inhibition 35.0%,CONFIRMED
+P4 dose rank order,"monotonic decrease, rho = -1.0",rho = -1.0000,absolute rho at or above 0.9,"rho = -1.0000, p = 0.0e+00",PASS
+P8 estimator leaves range,log-linear IC50 will fall outside the tested range with high R2,"IC50 911.84 vs top dose 400, R2 = 0.9996",IC50 above the highest dose tested,2.28x beyond the top dose,CONFIRMED
+P5 Tukey pattern,"no dose from 12.5 to 100 ppm separates from control, 200 ppm borderline","400ppm=True, 200ppm=False, 100ppm=False, 50ppm=False, 25ppm=False, 12.5ppm=False",match on the doses with a definite sealed claim,4 of 4 matched,PASS

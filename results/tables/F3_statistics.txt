@@ -1,0 +1,60 @@
+==============================================================================
+OBSERVED MTT DATA, MBEE VERSUS NEGATIVE CONTROL
+==============================================================================
+
+DESCRIPTIVES (mean +/- SD)
+------------------------------------------------------------------------------
+           group  n      mean        sd       sem       min       max    cv_pct
+          400ppm  4    59.327    14.329     7.165    43.726    78.321    24.153
+          200ppm  4    76.070    18.733     9.367    56.919   100.897    24.626
+          100ppm  3    86.945    25.001    14.434    58.815   106.628    28.755
+           50ppm  4   103.742    15.137     7.569    89.230   124.602    14.591
+           25ppm  4   107.962    21.683    10.842    90.020   139.363    20.084
+         12.5ppm  3   114.348    24.146    13.941   100.211   142.229    21.116
+negative_control  6   100.000     4.912     2.005    92.864   104.631     4.912
+
+ASSUMPTION CHECKS
+------------------------------------------------------------------------------
+Shapiro-Wilk, per group:
+           group  n         W         p  normal
+          400ppm  4    0.9629    0.7972    True
+          200ppm  4    0.9694    0.8375    True
+          100ppm  3    0.9144    0.4329    True
+           50ppm  4    0.9386    0.6461    True
+           25ppm  4    0.8549    0.2424    True
+         12.5ppm  3    0.7570    0.0156   False
+negative_control  6    0.8749    0.2463    True
+Shapiro-Wilk on pooled residuals: W = 0.9556, p = 0.2734
+Levene (center=median): W = 0.4434, p = 0.8414  -> variances homogeneous
+Branch taken: Kruskal-Wallis+Dunn
+
+KRUSKAL-WALLIS
+------------------------------------------------------------------------------
+  H = 12.8485   df = 6   p = 0.0455055
+  epsilon^2 = 0.3261
+  -> SIGNIFICANT
+
+POST HOC: Dunn (holm)
+------------------------------------------------------------------------------
+group_1          group_2  mean_rank_diff         z   p_unadj     p_adj  significant
+ 400ppm           200ppm         -5.2500   -0.9026    0.3667    1.0000        False
+ 400ppm           100ppm        -10.2500   -1.6315    0.1028    1.0000        False
+ 400ppm            50ppm        -14.0000   -2.4069    0.0161    0.2896        False
+ 400ppm            25ppm        -14.5000   -2.4928    0.0127    0.2408        False
+ 400ppm          12.5ppm        -17.2500   -2.7456    0.0060    0.1268        False
+ 400ppm negative_control        -13.9167   -2.6209    0.0088    0.1754        False
+ 200ppm           100ppm         -5.0000   -0.7958    0.4261    1.0000        False
+ 200ppm            50ppm         -8.7500   -1.5043    0.1325    1.0000        False
+ 200ppm            25ppm         -9.2500   -1.5903    0.1118    1.0000        False
+ 200ppm          12.5ppm        -12.0000   -1.9100    0.0561    0.9542        False
+ 200ppm negative_control         -8.6667   -1.6322    0.1026    1.0000        False
+ 100ppm            50ppm         -3.7500   -0.5969    0.5506    1.0000        False
+ 100ppm            25ppm         -4.2500   -0.6765    0.4987    1.0000        False
+ 100ppm          12.5ppm         -7.0000   -1.0422    0.2973    1.0000        False
+ 100ppm negative_control         -3.6667   -0.6304    0.5284    1.0000        False
+  50ppm            25ppm         -0.5000   -0.0860    0.9315    1.0000        False
+  50ppm          12.5ppm         -3.2500   -0.5173    0.6050    1.0000        False
+  50ppm negative_control          0.0833    0.0157    0.9875    1.0000        False
+  25ppm          12.5ppm         -2.7500   -0.4377    0.6616    1.0000        False
+  25ppm negative_control          0.5833    0.1099    0.9125    1.0000        False
+12.5ppm negative_control          3.3333    0.5731    0.5666    1.0000        False
