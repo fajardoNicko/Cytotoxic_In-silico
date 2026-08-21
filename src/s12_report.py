@@ -425,13 +425,28 @@ def build_docx(data: dict) -> Path:
          "be confirmed with the laboratory before the manuscript is finalised, because it "
          "changes how the potency compares to the literature.")
 
-    h(doc, "One sentence in the laboratory report does not match its own table", 2)
+    h(doc, "One sentence in the laboratory report is ambiguous and should be reworded", 2)
     para(doc,
-         "The analysis section states that the extract demonstrated inhibitory activity at "
-         "below 50 micrograms per millilitre. The table on the previous page shows viability "
-         "of 103.22 percent at 50, 107.32 at 25, and 120.30 at 12.5, all above the untreated "
-         "control. The sentence looks like a leftover from a template. Worth querying so it "
-         "does not get quoted into the manuscript.")
+         "The analysis section closes with the statement that the extract demonstrated "
+         "inhibitory activity against A549 cells at less than 50 ug/ml. That sentence has "
+         "two readings and they lead to opposite conclusions.")
+    para(doc,
+         "Read as a concentration, meaning inhibition occurred at doses below 50 micrograms "
+         "per millilitre, it contradicts the table on the previous page, which shows "
+         "viability of 103.22 percent at 50, 107.32 at 25, and 120.30 at 12.5, all above the "
+         "untreated control.")
+    para(doc,
+         "Read as a percentage, meaning inhibition never exceeded 50 percent, it is correct. "
+         "Inhibition is 100 minus viability, and the maximum reached anywhere in the run was "
+         "34.96 percent at the top dose. On that reading the printed unit is a typographical "
+         "error for a percent sign.")
+    para(doc,
+         "The second reading is the more likely one and it fits the surrounding text, which "
+         "is discussing the IC50 comparison. It also reinforces rather than softens the main "
+         "conclusion, because inhibition never reaching 50 percent is precisely why the IC50 "
+         "cannot be determined from this dose series. The wording still needs to be fixed "
+         "before it enters the manuscript, since a reader who takes it literally will "
+         "conclude the extract works at low dose, which the data does not support.")
 
     # ---- what it means ---------------------------------------------------
     h(doc, "What this means for the manuscript", 1)
@@ -450,8 +465,9 @@ def build_docx(data: dict) -> Path:
     para(doc,
          "Three things should change in the write up. The IC50 should be reported as greater "
          "than 400 micrograms per millilitre with the extrapolated figure shown separately "
-         "and labelled. The claim of activity below 50 micrograms per millilitre should be "
-         "removed. The absence of a vehicle control and a cell free interference control "
+         "and labelled. The sentence about activity at less than 50 ug/ml should be "
+         "rewritten to say plainly that inhibition did not exceed 50 percent at any "
+         "concentration tested. The absence of a vehicle control and a cell free interference control "
          "should be stated as limitations, since without them the above 100 percent "
          "readings at low dose cannot be explained.")
 
