@@ -3,7 +3,7 @@
 
 **Companion to:** "In Vitro Cytotoxic Activity of Malunggay's (*Moringa oleifera*) Ethanolic Bark Extract against A549 Lung Cancer Cells" (Dalistan, Roque, Soriano, Salvilla)
 **Purpose:** A computational study that (a) predicts the wet-lab outcome *before* it is run, (b) mirrors the exact assay, formulas and statistics of the research plan, and (c) is falsifiable against the real MTT data when it arrives.
-**Status:** Plan — no code written yet.
+**Status:** Phases A, C, D, E and F complete. Gate G5 **passed** on 2026-08-21: the sealed IC₅₀ prediction of 1062.9 µg/mL came in at fold error 1.166 against the measured 911.84 µg/mL. Phase B (docking, ADMET, network) remains unbuilt and runs on the literature library. See §9.
 
 ---
 
@@ -365,6 +365,35 @@ A sealed prediction is the difference between a modelling exercise and a genuine
 ---
 
 ## 9. Phase F — Validation against the real MTT data
+
+> ### ✅ COMPLETE (2026-08-21) — Gate G5 PASSED
+>
+> The MSU-IIT CCCBA laboratory released the assay in August 2026. The
+> prediction sealed on 2026-08-20, hash `7f73b66d...aedfd76c2`, was scored
+> against it without modification.
+>
+> | Sealed | Observed | Verdict |
+> |---|---|---|
+> | IC₅₀ 1062.9 µg/mL (68% CI 359–3143) | 911.84 µg/mL | fold error **1.166**, inside 3× ✅ |
+> | %viability at 5 doses | RMSE **10.70 pp** (≤ 15) | ✅ |
+> | Spearman ρ = −1.0 | ρ = **−1.0000** (6 doses) | ✅ |
+> | Series will not bracket 50% inhibition | max inhibition **35.0%** at 400 ppm | **confirmed** |
+> | Log-linear IC₅₀ leaves the range at high R² | **2.28× beyond top dose**, R² = 0.9996 | **confirmed** |
+> | No dose separates from control post hoc | Dunn: none significant | 4/4 matched |
+>
+> Lin's CCC was 0.438, the weakest number in the set. The prediction caps
+> viability at 100% by construction and the assay read 120.3% at 12.5 ppm, so
+> the low-dose end is where nearly all the error sits. That is a fixable
+> modelling choice, not a failure of the potency estimate, and it is exactly
+> the low-dose stimulation / MTT-interference signature that the cell-free
+> control (defect D6) was requested to resolve.
+>
+> **Result:** the extract is weak. IC₅₀ ≈ 912 µg/mL is ~9× above the NCI
+> cutoff for a crude extract worth pursuing.
+>
+> Code: `s11_observed_data.py`, `s10_validation.py`, `s12_report.py`.
+> Deliverables: `results/VALIDATION_REPORT.{docx,xlsx}`.
+
 
 When MSU-IIT returns the absorbance readings:
 
