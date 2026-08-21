@@ -58,6 +58,9 @@ absorbances.
 | Literature prior + dose-range advisory | `src/s07b_literature_prior.py` | ✅ memo issued |
 | Pre-registration + SHA-256 seal | `src/s10_preregister.py` | ✅ **sealed 2026-08-20** |
 | **Full methods write-up** | `docs/METHODS.md` / `.docx` | ✅ |
+| Observed-data ingest + OD audit | `src/s11_observed_data.py` | ✅ |
+| **Phase F validation (Gate G5)** | `src/s10_validation.py` | ✅ **G5 PASSED** |
+| Report builder (xlsx + docx) | `src/s12_report.py` | ✅ |
 
 **⚠ Composition data is not coming.** MSU-IIT confirmed that relative peak area
 and PubChem CID are **not** included with the MTT deliverable — there will be no
@@ -68,10 +71,10 @@ literature-based rather than batch-verified. See the amendment in
 **[IN_SILICO_PLAN.md](IN_SILICO_PLAN.md)** §3 and
 **[docs/MSU_IIT_DATA_REQUEST.md](docs/MSU_IIT_DATA_REQUEST.md)**.
 
-**Still needed from MSU-IIT:** (a) a qualitative compound-name list if any
-characterisation exists, (b) extract yield / solvent / stock mg/mL, and
-(c) **raw per-well absorbance** after the assay — without (c) the sealed
-prediction cannot be scored at all.
+**Received from MSU-IIT (Aug 2026):** raw per-well absorbance for all 78 wells,
+which is what made Phase F possible. **Still open:** treatment exposure time,
+the outlier rule actually used, extract yield and stock concentration, and any
+qualitative compound list.
 
 ---
 
@@ -88,18 +91,16 @@ prediction cannot be scored at all.
    automated.
 
 2. **Email the SHA-256 hash** from `results/prediction_registry/REGISTRY.md` to
-   the adviser. The prediction was sealed 2026-08-20 as
-   `7f73b66d7d33f191046f842738c3abb1395fffa482a9313f8d7be87aedfd76c2`. The
-   timestamp is what makes it falsifiable, so send it before any assay data
-   exists. Do not edit `prediction_v1.json` afterwards.
+   the adviser if this has not already been done. The prediction was sealed
+   2026-08-20 as `7f73b66d...aedfd76c2`. It was sealed before the assay data
+   existed, and the ledger records the timestamp and commit, so the claim
+   remains checkable after the fact.
 
-3. **Send the dose-range memo** — `results/prediction_registry/DOSE_RANGE_MEMO.md`.
-   Time-critical: it is only useful if it reaches MSU-IIT *before* they run the
-   assay. Recommended series **50/100/200/400/800/1600 ppm**; P(true IC₅₀ >
-   200 ppm) is 65–94% depending on prior.
+3. ~~Send the dose-range memo~~ — **done, and it landed.** The lab extended the
+   series to 400 ppm. That was not far enough, but it moved the right way.
 
-4. **Write `s03_docking.py`** against the literature library — this is now the
-   main remaining build, and it is unblocked.
+4. **Write `s03_docking.py`** against the literature library. The mechanism
+   section is the last unbuilt piece and it is unblocked.
 
 Gate G2 **failed** on the scaffold split (XGBoost test R² = 0.562 vs the
 pre-declared ≥ 0.60) while passing on the random split (0.712). Since the
@@ -112,7 +113,7 @@ ranking/triage only, never for absolute potency**, and Phase C runs on the
 literature prior. Gate G4 passed: doxorubicin predicted at 0.634 µM against a
 published 0.1–10 µM window, held out of training.
 
-Still unwritten: `s03_docking.py`, `s04_admet.py`, `s10_validation.py`.
+Still unwritten: `s03_docking.py`, `s04_admet.py`.
 
 ## Setup
 
