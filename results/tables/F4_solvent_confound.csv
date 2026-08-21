@@ -1,0 +1,7 @@
+sample,conc_ppm,viab_trial1,viab_trial2,viab_mean,viab_sd,dmso_pct_if_direct,over_routine_limit,over_toxic_threshold,inhibition_pct
+MBEE,12.5,105.01,135.59,120.3,21.62,0.125,False,False,-20.299999999999997
+MBEE,25.0,98.76,115.88,107.32,12.1,0.25,False,False,-7.319999999999993
+MBEE,50.0,97.53,108.92,103.22,8.05,0.5,False,False,-3.219999999999999
+MBEE,100.0,80.64,101.67,91.16,14.87,1.0,True,False,8.840000000000003
+MBEE,200.0,70.88,96.23,83.56,17.92,2.0,True,True,16.439999999999998
+MBEE,400.0,55.37,74.71,65.04,13.67,4.0,True,True,34.959999999999994

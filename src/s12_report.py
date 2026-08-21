@@ -59,6 +59,7 @@ def build_xlsx(data: dict) -> Path:
         ("QSAR model card", data["qsar"]),
         ("Monte Carlo E1 dose range", data["e1"]),
         ("Monte Carlo E2 power", data["e2"]),
+        ("Solvent confound", data["solvent"]),
     ]
     with pd.ExcelWriter(path, engine="openpyxl") as xl:
         for name, df in sheets:
@@ -365,6 +366,44 @@ def build_docx(data: dict) -> Path:
          "wells being removed by an unnamed criterion is the kind of thing a reviewer will "
          "ask about, and the answer should be ready.")
 
+    h(doc, "Solvent and dose cannot be separated in this design", 2)
+    para(doc,
+         "This is the most serious item in the report and it should be raised with the "
+         "laboratory first. The sample preparation section describes a 10,000 microgram "
+         "per millilitre stock made by dissolving 2 mg of extract in 200 microlitres of "
+         "neat DMSO, with working concentrations then prepared by diluting that stock "
+         "into culture medium. If the doses came straight off that stock, the final "
+         "solvent fraction is fixed by the dose.")
+    df_table(doc, pd.DataFrame([
+        {"Dose (ug/mL)": f"{r['conc_ppm']:g}",
+         "DMSO % v/v": f"{r['dmso_pct_if_direct']:.3g}",
+         "Viability %": f"{r['viab_mean']:.2f}",
+         "Above A549 limit": "yes" if r["over_routine_limit"] else "no"}
+        for _, r in data["solvent"].iterrows()]))
+    para(doc,
+         "A549 is routinely held at or below 0.5 percent DMSO and the solvent alone "
+         "commonly kills above about 1 percent. On these figures the top dose sits at 4 "
+         "percent, eight times the routine ceiling. The three doses that showed inhibition "
+         "are exactly the three that exceeded the limit, and all three doses at or below "
+         "the limit read above the untreated control.")
+    para(doc,
+         "The correlation between solvent fraction and viability is not the point, and it "
+         "is not evidence that DMSO caused the effect. Solvent fraction is an exact linear "
+         "function of dose in this design, so the two variables carry identical information "
+         "and cannot be told apart by any analysis of this dataset. The observed inhibition "
+         "is consistent with extract activity, with solvent toxicity, or with any mixture "
+         "of the two.")
+    para(doc,
+         "Three questions resolve it. Was an intermediate dilution in medium used before "
+         "dosing, because if so the real solvent fraction may be far lower and the concern "
+         "mostly goes away. What was the final percentage by volume of DMSO in the top dose "
+         "well. And can the vehicle control absorbances be supplied, given that the "
+         "viability formula in the report names an average vehicle absorbance term while "
+         "the raw data sheet carries only negative control and blank columns.")
+    figure(doc, FIG / "F4_solvent_confound.png",
+           "Figure 4. Viability by dose, with the implied DMSO percentage printed inside "
+           "each bar. Red bars exceed the routine A549 solvent ceiling of 0.5 percent.")
+
     h(doc, "The positive control ran weak", 2)
     para(doc,
          f"Doxorubicin returned an IC50 of {dox:.2f} micrograms per millilitre, which is "
@@ -375,8 +414,12 @@ def build_docx(data: dict) -> Path:
          f"and the report is right to say so. The offset matters for a different reason.")
     para(doc,
          "The treatment exposure time is not stated anywhere in the laboratory report. The "
-         "document gives the seeding density, the adhesion period, and the MTT incubation, "
-         "but not how long the cells sat with the extract before the dye went in. A short "
+         "document gives the seeding density at 1.8 by ten to the fourth cells per well, an "
+         "adhesion period of at least 24 hours, a 4 hour dye incubation, and a 1 hour "
+         "solubilisation stand. The 4 hour figure is the formazan development step, since "
+         "it is timed from the moment the dye solution was added to wells that already "
+         "contained treated cells. What is missing is the gap between dosing and dye "
+         "addition, which is the actual drug exposure and is normally 24, 48, or 72 hours. A short "
          "exposure would explain a weak doxorubicin result, and it would also mean the "
          "extract was given less time to act than published comparisons assume. This should "
          "be confirmed with the laboratory before the manuscript is finalised, because it "
@@ -496,6 +539,7 @@ def main() -> None:
         "e1": load("E1_dose_range_adequacy.csv"),
         "e2": load("E2_power.csv"),
         "reported": pd.read_csv(RAW / "mtt_observed_reported.csv"),
+        "solvent": load("F4_solvent_confound.csv"),
         "raw": pd.read_csv(RAW / "mtt_observed_absorbance.csv"),
     }
 
